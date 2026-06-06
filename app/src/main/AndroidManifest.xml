@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.meow.dump">
+
+    <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="34"/>
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/ThemeMeowDump"
+        android:name=".MeowApp">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <service android:name=".tiles.KillAppTile" android:exported="true" android:label="@string/tile_kill_app" android:icon="@drawable/ic_kill" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter><action android:name="android.service.quicksettings.action.QS_TILE"/></intent-filter>
+        </service>
+
+        <service android:name=".tiles.PIFTile" android:exported="true" android:label="@string/tile_pif" android:icon="@drawable/ic_shield" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter><action android:name="android.service.quicksettings.action.QS_TILE"/></intent-filter>
+        </service>
+
+        <service android:name=".tiles.KillGmsTile" android:exported="true" android:label="@string/tile_kill_gms" android:icon="@drawable/ic_block" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter><action android:name="android.service.quicksettings.action.QS_TILE"/></intent-filter>
+        </service>
+
+        <service android:name=".tiles.KeyboxTile" android:exported="true" android:label="@string/tile_keybox" android:icon="@drawable/ic_key" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter><action android:name="android.service.quicksettings.action.QS_TILE"/></intent-filter>
+        </service>
+
+        <service android:name=".tiles.RefreshTargetTile" android:exported="true" android:label="@string/tile_refresh_target" android:icon="@drawable/ic_refresh" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter><action android:name="android.service.quicksettings.action.QS_TILE"/></intent-filter>
+        </service>
+
+        <service android:name=".tiles.ImportHmaTile" android:exported="true" android:label="@string/tile_import_hma" android:icon="@drawable/ic_import" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter><action android:name="android.service.quicksettings.action.QS_TILE"/></intent-filter>
+        </service>
+
+        <service android:name=".tiles.HideLineageTile" android:exported="true" android:label="@string/tile_hide_lineage" android:icon="@drawable/ic_hide" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter><action android:name="android.service.quicksettings.action.QS_TILE"/></intent-filter>
+        </service>
+
+        <service android:name=".tiles.OpenWebuiTile" android:exported="true" android:label="@string/tile_open_webui" android:icon="@drawable/ic_web" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter><action android:name="android.service.quicksettings.action.QS_TILE"/></intent-filter>
+        </service>
+
+        <service android:name=".tiles.LockDeviceTile" android:exported="true" android:label="@string/tile_lock_device" android:icon="@drawable/ic_lock" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter><action android:name="android.service.quicksettings.action.QS_TILE"/></intent-filter>
+        </service>
+
+        <service android:name=".tiles.CaffeineTile" android:exported="true" android:label="@string/tile_caffeine" android:icon="@drawable/ic_coffee" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter><action android:name="android.service.quicksettings.action.QS_TILE"/></intent-filter>
+        </service>
+
+        <service android:name=".tiles.ScreenshotTile" android:exported="true" android:label="@string/tile_screenshot" android:icon="@drawable/ic_screenshot" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter><action android:name="android.service.quicksettings.action.QS_TILE"/></intent-filter>
+        </service>
+
+        <service android:name=".tiles.MobileDataTile" android:exported="true" android:label="Mobile Data" android:icon="@drawable/ic_mobile_data" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter><action android:name="android.service.quicksettings.action.QS_TILE"/></intent-filter>
+        </service>
+
+        <service android:name=".tiles.WiFiTile" android:exported="true" android:label="WiFi" android:icon="@drawable/ic_wifi" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter><action android:name="android.service.quicksettings.action.QS_TILE"/></intent-filter>
+        </service>
+
+    </application>
+</manifest>
