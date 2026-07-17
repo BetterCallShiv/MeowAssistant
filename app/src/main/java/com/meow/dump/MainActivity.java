@@ -285,7 +285,7 @@ public class MainActivity extends Activity {
         
         LinearLayout row7 = new LinearLayout(this);
         row7.setOrientation(LinearLayout.HORIZONTAL);
-        row7.setPadding(0, dp(8), 0, dp(8));
+        row7.setPadding(0, dp(8), 0, 0);
         
         LinearLayout tileWiFi = createTile("WiFi", "Toggle", Color.parseColor("#006C4C"), R.drawable.ic_wifi, cardColor, textColor);
         tileWiFi.setOnClickListener(new View.OnClickListener() {
@@ -295,17 +295,36 @@ public class MainActivity extends Activity {
         });
         row7.addView(tileWiFi, new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
         
+        LinearLayout tileDns = createTile("DNS", "Toggle", Color.parseColor("#0D47A1"), R.drawable.ic_dns, cardColor, textColor);
+        tileDns.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Use QS tile for DNS", Toast.LENGTH_SHORT).show();
+            }
+        });
+        LinearLayout.LayoutParams dnsParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+        dnsParams.setMargins(dp(8), 0, 0, 0);
+        row7.addView(tileDns, dnsParams);
+        
+        mainLayout.addView(row7);
+        
+        LinearLayout row8 = new LinearLayout(this);
+        row8.setOrientation(LinearLayout.HORIZONTAL);
+        row8.setPadding(0, dp(8), 0, dp(8));
+        
         LinearLayout tileSupport = createTile("Support", "Donate", Color.parseColor(isDarkTheme ? "#FF8C69" : "#FF6B6B"), R.drawable.ic_heart, cardColor, textColor);
         tileSupport.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 openUrl("https://meowdump.github.io");
             }
         });
-        LinearLayout.LayoutParams supportParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1);
-        supportParams.setMargins(dp(8), 0, 0, 0);
-        row7.addView(tileSupport, supportParams);
+        row8.addView(tileSupport, new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
         
-        mainLayout.addView(row7);
+        LinearLayout tilePlaceholder = new LinearLayout(this);
+        LinearLayout.LayoutParams placeholderParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+        placeholderParams.setMargins(dp(8), 0, 0, 0);
+        row8.addView(tilePlaceholder, placeholderParams);
+        
+        mainLayout.addView(row8);
         
         LinearLayout linkRow = new LinearLayout(this);
         linkRow.setOrientation(LinearLayout.HORIZONTAL);

@@ -30,6 +30,16 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".TilePreferencesActivity" 
+                  android:exported="true" 
+                  android:theme="@android:style/Theme.NoDisplay"
+                  android:excludeFromRecents="true"
+                  android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES"/>
+            </intent-filter>
+        </activity>
+
         <service android:name=".tiles.KillAppTile" android:exported="true" android:label="@string/tile_kill_app" android:icon="@drawable/ic_kill" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter><action android:name="android.service.quicksettings.action.QS_TILE"/></intent-filter>
         </service>
@@ -79,6 +89,10 @@
         </service>
 
         <service android:name=".tiles.WiFiTile" android:exported="true" android:label="WiFi" android:icon="@drawable/ic_wifi" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter><action android:name="android.service.quicksettings.action.QS_TILE"/></intent-filter>
+        </service>
+
+        <service android:name=".tiles.DnsTile" android:exported="true" android:label="@string/tile_dns" android:icon="@drawable/ic_dns" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter><action android:name="android.service.quicksettings.action.QS_TILE"/></intent-filter>
         </service>
 
