@@ -20,4 +20,5 @@
     <string name="tiles_description">Meow Tiles puts useful shortcuts right in your Quick Settings panel. No need to dig through apps or menus, just swipe down and tap. Some tiles work out of the box, others need root access, and a few are built specifically for Meow\'s modules. Whether you\'re killing apps, clearing cache, keeping your screen awake, or grabbing a screenshot, everything happens instantly without leaving what you\'re doing. Built for Android, designed for convenience.</string>
     <string name="source_code">Source Code</string>
     <string name="telegram">Bug Report</string>
+    <string name="tile_dns">DNS Toggle</string>
 </resources>
